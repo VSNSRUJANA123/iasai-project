@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 .logo {
   width: 150px;
@@ -99,12 +100,11 @@
     flex-direction: column;
   }
   .heading-container {
-    width: 85%;
-    padding-left: 50px;
+    width: 100%;
     padding-bottom: 15px;
   }
   .heading-container h1 {
-    font-size: 24px;
+    font-size: 33px;
   }
   .carousel-container {
     width: 80%;

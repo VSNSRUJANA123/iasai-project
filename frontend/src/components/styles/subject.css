@@ -17,8 +17,8 @@
   padding: 10px;
   margin-right: 10px;
   margin-bottom: 10px;
-  width: 90px;
-  height: 90px;
+  width: 160px;
+  height: 160px;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -70,25 +70,28 @@
   .subject {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: start;
     padding-top: 10px;
+    padding-left: 25px;
   }
   .cards {
     padding-bottom: 10px;
   }
   .name {
+    width: 120px;
+    height: 120px;
     font-size: 13px;
   }
   .subject-desc-container {
-    padding-left: 36px;
+    padding-bottom: 20px;
   }
   .subject-tittle {
-    font-size: 25px;
+    font-size: 32px;
   }
   .subject-desc {
-    width: 270px;
-
-    font-size: 13px;
+    width: 100%;
+    padding-right: 19px;
+    font-size: 15px;
   }
   .button-container {
     margin-bottom: 10px;

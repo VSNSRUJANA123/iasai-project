@@ -17,8 +17,8 @@ const Chat = (props) => {
             </div>
           </div>
           <div className="ai-reply">
-            <span className="chat-status">IASAI</span> :
-            <Typewriter text={items.reply} speed={50} />
+            <span className="chat-status">IAS</span> :
+            <Typewriter text={items.reply} />
           </div>
         </div>
       ))}

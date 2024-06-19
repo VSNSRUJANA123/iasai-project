@@ -34,11 +34,11 @@ const Navbar = () => {
           <li>Strategy</li>
           <li>Teacher</li>
           <li>Student</li>
+          <li>Help</li>
         </ul>
       </div>
       <div className="sub-nav-container">
         <ul className="sub-nav">
-          <li>Help</li>
           <li>
             <Popup
               modal

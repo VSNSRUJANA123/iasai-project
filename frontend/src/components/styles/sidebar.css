@@ -25,14 +25,14 @@
 }
 @media (max-width: 600px) {
   .sidebar {
-    width: auto;
     position: relative;
-  }
-
-  .sidebar-hide {
     display: none;
   }
-  .sidebar h3 {
+  .hide-bar {
+    display: none;
+  }
+  .sidebar-padding {
+    padding-left: 20px;
   }
   .sidebar-menu {
     display: flex;

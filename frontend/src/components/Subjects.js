@@ -11,12 +11,12 @@ const Subjects = (props) => {
         <div className=" subject-desc-container">
           <h1 className="subject-tittle">{title}</h1>
           <p className="subject-desc">{desc}</p>
-          <div className="button-container">
+          {/* <div className="button-container">
             <button className="button">Ask Q & A</button>
             <a className="span">
               <span>Not Ready?Start Prepare</span>
             </a>
-          </div>
+          </div> */}
         </div>
         <div className="cards">
           <div>
@@ -62,12 +62,12 @@ const Subjects = (props) => {
       <div className="subject-desc-container order-subject">
         <h1 className="subject-tittle">{title}</h1>
         <p className="subject-desc">{desc}</p>
-        <div className="button-container">
+        {/* <div className="button-container">
           <button className="button">Ask Q & A</button>
           <a className="span">
             <span>Not Ready?Start Prepare</span>
           </a>
-        </div>
+        </div> */}
       </div>
     </div>
   );

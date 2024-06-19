@@ -54,7 +54,7 @@
 @media (max-width: 600px) {
   .logo-container {
     position: relative;
-    width: 89%;
+    width: 100%;
   }
   .logo-nav h1 {
     font-size: 20px;

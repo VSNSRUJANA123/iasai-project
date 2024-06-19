@@ -55,8 +55,10 @@ const Home = () => {
 
     window.location.href = whatsappLink;
   };
-  const whatsapp = (e) => {
+  const submit = (e) => {
     e.preventDefault();
+  };
+  const whatsapp = () => {
     redirectToWhatsApp();
   };
   return (
@@ -93,7 +95,7 @@ const Home = () => {
                     <IoIosCloseCircle className="close-icon" />
                   </button>
                   <h1 className="form-head">User Login</h1>
-                  <form className="login-form">
+                  <form className="login-form" onSubmit={submit}>
                     <input placeholder="enter mail" type="mail" />
                     <input placeholder="enter password" type="password" />
                     <button>Login</button>

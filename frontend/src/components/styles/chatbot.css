@@ -49,9 +49,12 @@
   position: fixed;
   bottom: 0;
   border: none;
+
   text-align: center;
+  overflow: hidden;
 }
 .text-box input {
+  overflow: hidden;
   width: 90%;
   background-color: #333333;
   border: none;
@@ -92,7 +95,10 @@
   background: transparent;
   border: none;
 }
-
+.mic-icon {
+  font-size: 23px;
+  margin-right: 12px;
+}
 @media (max-width: 600px) {
   .direction-container {
     display: flex;
@@ -107,15 +113,33 @@
   }
   .text-box {
     text-align: center;
+    width: 100%;
   }
   .text-box input {
     font-size: 15px;
     padding: 12px;
     margin-bottom: 0px;
-    width: 90%;
+    width: 100%;
+    white-space: wrap;
+  }
+  .mic-icon {
+    display: none;
+    background-color: #333333;
+    width: 20px;
+    height: 40px;
+    margin-left: 8px;
+    position: absolute;
+    font-size: 20px;
+    top: 25%;
+    left: 3%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    overflow: hidden;
+    padding: 2px;
+    z-index: 2;
   }
   .send-btn {
-    top: 32%;
+    top: 30%;
     right: 10%;
   }
 }

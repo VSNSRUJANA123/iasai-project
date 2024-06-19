@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./styles/typewriter.css";
-const Typewriter = ({ text, speed = 100 }) => {
+const Typewriter = ({ text, speed = 30 }) => {
   const [displayedText, setDisplayedText] = useState("");
 
   useEffect(() => {
@@ -16,13 +16,7 @@ const Typewriter = ({ text, speed = 100 }) => {
     return () => clearInterval(interval);
   }, [text, speed]);
 
-  return (
-    <p className="typewriter">
-      <span className="typewriter">{displayedText}</span>
-      <span className="caret">|</span>
-      {/* {displayedText} */}
-    </p>
-  );
+  return <span className="typewriter">{displayedText}</span>;
 };
 
 export default Typewriter;

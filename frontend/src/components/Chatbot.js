@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import Sidebar from "./Sidebar";
+import { FaMicrophone } from "react-icons/fa";
 import Chat from "./Chat";
 import { IoIosArrowForward } from "react-icons/io";
 import BeatLoader from "react-spinners/BeatLoader";
@@ -20,7 +21,9 @@ const Chatbot = () => {
   const [topic, setTopic] = useState([]);
   const [loading, setLoading] = useState(false);
   const [sidebar, setSidebar] = useState(false);
-  const menuIcon = () => {
+  const sidebarRef = useRef(null);
+
+  const menuIcon = (sidebar) => {
     setSidebar(!sidebar);
   };
   useEffect(() => {
@@ -35,6 +38,18 @@ const Chatbot = () => {
       }
     };
     handleSearch();
+  }, []);
+  const handleClickOutside = (event) => {
+    if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+      setSidebar(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   const fetchChat = async (message) => {
@@ -93,7 +108,10 @@ const Chatbot = () => {
   return (
     <div className="chatbot-container">
       <div className="direction-container">
-        <HiMenuAlt4 onClick={menuIcon} className="chat-menu-icon" />
+        <HiMenuAlt4
+          onClick={() => menuIcon(sidebar)}
+          className="chat-menu-icon"
+        />
         <div className="direction">
           <h3>
             UPSC <IoIosArrowForward /> {result}
@@ -102,7 +120,12 @@ const Chatbot = () => {
         <HiMenuAlt4 className="chat-menu-disable" />
       </div>
       <div className="sidebar-chatbot-container">
-        <Sidebar topic={topic} search={search} sidebar={sidebar} />
+        <Sidebar
+          topic={topic}
+          search={search}
+          sidebar={sidebar}
+          onClose={() => setSidebar(false)}
+        />
         <div className="chatbot">
           <h2>{search}</h2>
           <hr className="hr" />
@@ -117,6 +140,7 @@ const Chatbot = () => {
           </div>
           <Chat chatList={chatList} />
           <form className="text-box" onSubmit={submit}>
+            <FaMicrophone className="mic-icon" />
             <input
               onChange={changeInput}
               value={input}
@@ -127,8 +151,8 @@ const Chatbot = () => {
               {loading ? (
                 <BeatLoader
                   color="#dddddd"
-                  height="80"
-                  width="80"
+                  height="30"
+                  width="30"
                   aria-label="Loading Spinner"
                   data-testid="loader"
                 />
