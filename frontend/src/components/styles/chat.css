@@ -1,0 +1,39 @@
+.user-msg {
+  font-family: ui-sans-serif, -apple-system, system-ui, "Segoe UI", Roboto,
+    Ubuntu, Cantarell, "Noto Sans", sans-serif, Helvetica, "Apple Color Emoji",
+    Arial, "Segoe UI Emoji", "Segoe UI Symbol";
+
+  padding: 10px;
+  background-color: #f4f4f441;
+  border: 1px solid #333a44;
+  width: 50%;
+  border-radius: 10px;
+  margin: 10px;
+}
+.user-msg-container {
+  display: flex;
+  justify-content: end;
+}
+.ai-reply {
+  width: 50%;
+  display: flex;
+  border: 1px solid #333a44;
+  margin-left: 20px;
+  border-radius: 10px;
+  padding: 10px;
+}
+.ai-reply p {
+  font-family: ui-sans-serif, -apple-system, system-ui, "Segoe UI", Roboto,
+    Ubuntu, Cantarell, "Noto Sans", sans-serif, Helvetica, "Apple Color Emoji",
+    Arial, "Segoe UI Emoji", "Segoe UI Symbol";
+
+  color: #f1f1f8;
+  padding: 10px;
+  padding-top: 0;
+}
+.chat-status {
+  color: #ffd900;
+}
+.chat-container {
+  margin-bottom: 140px;
+}

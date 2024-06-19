@@ -1,0 +1,88 @@
+.logo-container {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  background-color: black;
+  z-index: 2;
+  padding: 15px;
+}
+.logo-nav {
+  display: flex;
+  align-items: center;
+}
+.logo-nav h1 {
+  font-size: 36px;
+}
+.nav-ul {
+  margin-left: 15px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.nav-ul li {
+  margin-right: 15px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+}
+.close-btn {
+  padding: 10px;
+  margin-bottom: 10px;
+  background: transparent;
+  border: none;
+}
+.sub-nav-container {
+  padding-right: 15px;
+  display: flex;
+  align-items: center;
+}
+.sub-nav {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+.sub-nav li {
+  margin-right: 15px;
+}
+.menu-icon {
+  display: none;
+}
+@media (max-width: 600px) {
+  .logo-container {
+    position: relative;
+    width: 89%;
+  }
+  .logo-nav h1 {
+    font-size: 20px;
+  }
+  .button {
+    padding: 10px;
+  }
+  .nav-ul {
+    display: none;
+  }
+  .small-nav {
+    display: block;
+    padding-top: 25px;
+    padding-bottom: 30px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    top: 75px;
+    right: 0;
+    background-color: black;
+  }
+  .small-nav li {
+    padding-top: 7px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+  }
+  .menu-icon {
+    display: block;
+  }
+}

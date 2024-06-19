@@ -1,0 +1,123 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.logo {
+  width: 150px;
+}
+.bg-layer {
+  width: 100%;
+  position: relative;
+  background-color: #222;
+  color: white;
+}
+.heading-section {
+  width: 100%;
+  padding-top: 145px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.heading-container {
+  padding: 0px 30px;
+  width: 50%;
+}
+.heading {
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  color: #ffd900;
+}
+.description {
+  font-family: Nunito Sans, sans-serif;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  size: 15px;
+  line-height: 23px;
+  padding-top: 15px;
+}
+.subject-section {
+  padding-top: 25px;
+}
+.start-now-container {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.select-subject {
+  font-family: Montserrat, sans-serif;
+  color: rgb(255, 193, 24);
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 24px;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.carousel-container {
+  justify-content: center;
+  /* padding-right: 30px; */
+  width: 50%;
+}
+
+.login-form {
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.form-head {
+  padding-bottom: 10px;
+  text-align: center;
+}
+.login-form input {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.login-form button {
+  background-color: transparent;
+  border: 1px solid black;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.close-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .logo-header {
+    text-align: center;
+  }
+  .logo {
+    width: 200px;
+  }
+  .heading-section {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+  }
+  .heading-container {
+    width: 85%;
+    padding-left: 50px;
+    padding-bottom: 15px;
+  }
+  .heading-container h1 {
+    font-size: 24px;
+  }
+  .carousel-container {
+    width: 80%;
+  }
+  .heading {
+    font-size: 28px;
+    line-height: 33px;
+  }
+  .description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .ai-logo {
+    width: 300px;
+  }
+}

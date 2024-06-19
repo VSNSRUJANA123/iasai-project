@@ -1,0 +1,31 @@
+/* styles/chat.css */
+/* .typewriter {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 0.15em solid #f4f4f441; /* Adjust the color and width as needed */
+/* white-space: wrap;
+  animation: caret 1s steps(1) infinite;
+  line-height: 1.2;
+  position: relative;
+} */
+
+.typewriter-container {
+  display: inline;
+  position: relative;
+  width: 100%;
+}
+
+.caret {
+  display: inline-block;
+  position: absolute;
+  right: 0; /* Align to the right edge */
+  bottom: 0; /* Align to the bottom of the container */
+  height: 1em; /* Match the text height */
+  border-right: 0.15em solid orange; /* Adjust the caret color and width */
+  animation: caret 1s steps(1) infinite;
+}
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
