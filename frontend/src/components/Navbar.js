@@ -3,6 +3,7 @@ import { IoMenu } from "react-icons/io5";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import { IoIosCloseCircle } from "react-icons/io";
+import { FaWhatsapp } from "react-icons/fa";
 import { useState } from "react";
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
@@ -39,6 +40,12 @@ const Navbar = () => {
       </div>
       <div className="sub-nav-container">
         <ul className="sub-nav">
+          <li>
+            <FaWhatsapp
+              onClick={redirectToWhatsApp}
+              className="whatsapp-icon"
+            />
+          </li>
           <li>
             <Popup
               modal

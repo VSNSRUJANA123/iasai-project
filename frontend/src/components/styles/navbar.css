@@ -51,6 +51,10 @@
 .menu-icon {
   display: none;
 }
+.whatsapp-icon {
+  font-size: 30px;
+  cursor: pointer;
+}
 @media (max-width: 600px) {
   .logo-container {
     position: relative;

@@ -4,6 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Subjects from "./Subjects";
 import { IoIosCloseCircle } from "react-icons/io";
 import { BallTriangle } from "react-loader-spinner";
+
 import axios from "axios";
 import Navbar from "./Navbar";
 import image1 from "./images/image1.png";
