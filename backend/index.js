@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use("/api/", require("./routes/item"));
-app.use("/subject/", require("./routes/item"));
+// app.use("/", require("./routes/item"));
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
   console.log(`server running on port ${PORT} `);
