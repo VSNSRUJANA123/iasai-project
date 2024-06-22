@@ -9,5 +9,8 @@ const itemSchema = new mongoose.Schema({
   subjects: {
     type: Object,
   },
+  images: {
+    type: Object,
+  },
 });
 module.exports = mongoose.model("item", itemSchema);
