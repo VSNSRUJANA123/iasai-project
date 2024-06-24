@@ -41,68 +41,10 @@ router.get("/search", async (req, res) => {
 });
 
 const OPENAI_API_KEY = process.env.OPEN_API;
-
-// const abortControllers = {};
-
-// router.post("/message", async (req, res) => {
-//   const { message, requestId } = req.body;
-
-//   if (abortControllers[requestId]) {
-//     abortControllers[requestId].abort();
-//   }
-//   // currentRequestController = new AbortController(); // Initialize here
-
-//   const controller = new AbortController();
-//   abortControllers[requestId] = controller;
-
-//   try {
-//     const response = await axios.post(
-//       "https://api.openai.com/v1/chat/completions",
-//       {
-//         model: "gpt-3.5-turbo",
-//         messages: [{ role: "user", content: message }],
-//       },
-//       {
-//         headers: {
-//           Authorization: `Bearer ${OPENAI_API_KEY}`,
-//           "Content-Type": "application/json",
-//         },
-//         signal: controller.signal,
-//       }
-//     );
-
-//     const assistantMessage = response.data.choices[0].message.content;
-//     res.json({ reply: assistantMessage });
-//   } catch (error) {
-//     if (error.name === "AbortError") {
-//       res.status(499).json({ error: "Request aborted" });
-//     } else {
-//       console.error("Error communicating with OpenAI API:", error);
-//       res
-//         .status(500)
-//         .json({ error: "Failed to fetch response from OpenAI API" });
-//     }
-//   } finally {
-//     delete abortControllers[requestId];
-//   }
-// });
-
-// router.post("/chat/stop", (req, res) => {
-//   const { requestId } = req.body;
-//   console.log("chatbot stop");
-//   if (abortControllers[requestId]) {
-//     abortControllers[requestId].abort();
-//     delete abortControllers[requestId];
-//     res.status(200).json({ message: "Request aborted" });
-//   } else {
-//     res.status(400).json({ error: "Invalid requestId" });
-//   }
-// });
 const abortControllers = {};
 
 router.post("/message", async (req, res) => {
   const { message, requestId } = req.body;
-
   if (abortControllers[requestId]) {
     abortControllers[requestId].abort();
   }
@@ -134,7 +76,7 @@ router.post("/message", async (req, res) => {
     if (error.code === "ERR_CANCELED") {
       res.status(499).json({ error: "Request aborted" });
     } else {
-      console.error("Error communicating with OpenAI API:", error);
+      // console.error("Error communicating with OpenAI API:", error);
       res
         .status(500)
         .json({ error: "Failed to fetch response from OpenAI API" });
