@@ -28,14 +28,15 @@ const Navbar = () => {
   return (
     <section className="logo-container">
       <div className="logo-nav">
-        <h1>IASAI</h1>
+        <IoMenu onClick={menuIcon} className="menu-icon" />
+        <h3 className="logo">SaAi</h3>
         <ul className={`nav-ul ${menu && "small-nav"} `}>
           <li>UPSC </li>
           <li>Syllabus</li>
           <li>Strategy</li>
           <li>Teacher</li>
           <li>Student</li>
-          <li>Help</li>
+          <li className="big-screen-help">Help</li>
         </ul>
       </div>
       <div className="sub-nav-container">
@@ -46,11 +47,12 @@ const Navbar = () => {
               className="whatsapp-icon"
             />
           </li>
+          <li className="help-small-screen">Help</li>
           <li>
             <Popup
               modal
               trigger={
-                <button type="button" className="button trigger-button">
+                <button type="button " className=" big-button trigger-button">
                   Sign Up
                 </button>
               }
@@ -59,7 +61,7 @@ const Navbar = () => {
                 <>
                   <button
                     type="button"
-                    className="trigger-button close-btn"
+                    className="close-btn"
                     onClick={() => close()}
                   >
                     <IoIosCloseCircle className="close-icon" />
@@ -77,7 +79,6 @@ const Navbar = () => {
             </Popup>
           </li>
         </ul>
-        <IoMenu onClick={menuIcon} className="menu-icon" />
       </div>
     </section>
   );

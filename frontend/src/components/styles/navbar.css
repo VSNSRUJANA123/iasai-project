@@ -8,37 +8,39 @@
     Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   background-color: black;
   z-index: 2;
-  padding: 15px;
+  padding: 13px;
+  padding-bottom: 0;
 }
 .logo-nav {
   display: flex;
   align-items: center;
 }
-.logo-nav h1 {
-  font-size: 36px;
+.logo {
+  font-family: UberMove, UberMoveText, system-ui, "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 17px;
+  margin-left: 60px;
 }
 .nav-ul {
-  margin-left: 15px;
   list-style: none;
   display: flex;
   align-items: center;
+  margin-left: 0;
 }
 .nav-ul li {
   margin-right: 15px;
+  /* margin-left: 10px; */
   cursor: pointer;
   font-size: 14px;
   font-weight: 400;
 }
-.close-btn {
-  padding: 10px;
-  margin-bottom: 10px;
-  background: transparent;
-  border: none;
-}
+
 .sub-nav-container {
-  padding-right: 15px;
   display: flex;
   align-items: center;
+  padding-right: 3px;
 }
 .sub-nav {
   display: flex;
@@ -49,22 +51,50 @@
   margin-right: 15px;
 }
 .menu-icon {
+  margin-right: 10px;
   display: none;
+  font-size: 20px;
+  margin-bottom: 12px;
 }
 .whatsapp-icon {
-  font-size: 30px;
+  font-size: 25px;
+  align-items: center;
   cursor: pointer;
 }
-@media (max-width: 600px) {
-  .logo-container {
-    position: relative;
-    width: 100%;
+.big-button {
+  background-color: #fff;
+  border: none;
+  border-radius: 15px;
+  color: #000;
+  cursor: pointer;
+  padding-top: 0;
+  padding: 4px;
+  width: 80px;
+  font-size: 15px;
+  margin-top: 0;
+  border-radius: 20px;
+}
+.big-screen-help {
+  display: none;
+}
+.help-small-screen {
+  display: block;
+}
+@media (min-width: 478px) and (max-width: 778px) {
+  .logo-nav {
+    padding-left: 10px;
   }
-  .logo-nav h1 {
+  .logo-container {
+    position: fixed;
+    width: 100%;
+    padding-right: 0;
+  }
+  .logo {
+    margin-left: 0px;
     font-size: 20px;
   }
   .button {
-    padding: 10px;
+    padding: 0px;
   }
   .nav-ul {
     display: none;
@@ -77,8 +107,8 @@
     display: flex;
     flex-direction: column;
     width: 50%;
-    top: 75px;
-    right: 0;
+    top: 65px;
+    left: -16px;
     background-color: black;
   }
   .small-nav li {
@@ -87,6 +117,61 @@
     padding-bottom: 10px;
   }
   .menu-icon {
+    margin-left: 10px;
     display: block;
+  }
+  .big-screen-help {
+    display: block;
+  }
+  .help-small-screen {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .logo-nav {
+    padding-left: 5px;
+  }
+  .logo-container {
+    position: fixed;
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .logo {
+    margin-left: 0px;
+    font-size: 20px;
+  }
+  .big-button {
+    padding: 7px 0px;
+  }
+  .nav-ul {
+    display: none;
+  }
+  .small-nav {
+    display: block;
+    padding-top: 25px;
+    padding-bottom: 30px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    top: 65px;
+    left: -16px;
+    background-color: black;
+  }
+  .small-nav li {
+    padding-top: 7px;
+    padding-left: 0px;
+    padding-bottom: 10px;
+  }
+  .menu-icon {
+    margin-left: 7px;
+    display: block;
+  }
+  .big-screen-help {
+    display: block;
+  }
+  .help-small-screen {
+    display: none;
   }
 }
