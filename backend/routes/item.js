@@ -2,9 +2,11 @@ const express = require("express");
 const router = express.Router();
 const Item = require("../models/items");
 const Topic = require("../models/topics");
+const Chat = require("../models/Chat");
 const axios = require("axios");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const { v4: uuidv4 } = require("uuid");
 require("dotenv").config();
 router.use(bodyParser.json());
 router.get("/", async (req, res) => {
@@ -66,7 +68,6 @@ router.post("/message", async (req, res) => {
         signal: controller.signal,
       }
     );
-
     const assistantMessage = response.data.choices[0].message.content;
     res.json({ reply: assistantMessage });
   } catch (error) {
@@ -76,7 +77,6 @@ router.post("/message", async (req, res) => {
     if (error.code === "ERR_CANCELED") {
       res.status(499).json({ error: "Request aborted" });
     } else {
-      // console.error("Error communicating with OpenAI API:", error);
       res
         .status(500)
         .json({ error: "Failed to fetch response from OpenAI API" });
@@ -121,5 +121,45 @@ router.post("/topics", async (req, res) => {
     res.status(500).json({ message: "Error retrieving topics", error });
   }
 });
+router.post("/chat/new", async (req, res) => {
+  const { name, message } = req.body;
+  try {
+    const newChat = new Chat({
+      id: uuidv4(),
+      name,
+      message,
+    });
+    await newChat.save();
+    res.status(201).json(newChat);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+router.get("/chat/history", async (req, res) => {
+  try {
+    const chats = await Chat.find({});
+    res.json(chats);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch chat histories" });
+  }
+});
+// router.get("/chat/:name", async (req, res) => {
+//   const chatName = req.params.name;
+//   try {
+//     const chat = await Chat.findOne({ name: chatName });
+//     res.json(chat);
+//   } catch (error) {
+//     res.status(500).json({ error: "Failed to fetch chat" });
+//   }
+// });
+router.get("/chat/:id", async (req, res) => {
+  const chatId = req.params.id;
 
+  try {
+    const chat = await Chat.findOne({ id: chatId });
+    res.json(chat);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch chat" });
+  }
+});
 module.exports = router;
